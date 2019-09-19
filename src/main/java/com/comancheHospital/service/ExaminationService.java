@@ -1,5 +1,6 @@
 package com.comancheHospital.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -30,6 +31,10 @@ public class ExaminationService {
 		return examinationRepository.findAll(pageable);
 	}
 	
+	public List<Examination> getExaminationByDate(LocalDateTime examinationDate) {
+		return examinationRepository.findByExaminationDate(examinationDate);
+	}
+	
 	public Page<Examination> getAllExaminationsByDoctorWithPage(Pageable pageable, Long id) {
 		return examinationRepository.findByDoctorId(pageable, id);
 	}
@@ -40,6 +45,10 @@ public class ExaminationService {
 	
 	public Examination saveExamination(Examination examination) {
 		return examinationRepository.save(examination);
+	}
+	
+	public void deleteExamination(Long id) {
+		examinationRepository.deleteById(id);
 	}
 
 }

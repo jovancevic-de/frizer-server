@@ -2,8 +2,6 @@ package com.comancheHospital.dto;
 
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +17,6 @@ public class ExaminationDto {
 	
 	private PatientDto patient;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	private LocalDateTime examinationDate;
 
 }

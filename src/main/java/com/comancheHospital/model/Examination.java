@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +35,6 @@ public class Examination {
 	private Patient patient;
 	
 	@Column(nullable = false)
-	private LocalDateTime examination_date;
+	private LocalDateTime examinationDate;
 
 }

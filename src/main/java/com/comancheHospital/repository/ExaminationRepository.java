@@ -1,5 +1,6 @@
 package com.comancheHospital.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -14,5 +15,5 @@ public interface ExaminationRepository extends JpaRepository<Examination, Long> 
 	
 	List<Examination> findByDoctorId(Long id);
 	Page<Examination> findByDoctorId(Pageable pageable, Long id);
-	
+	List<Examination> findByExaminationDate(LocalDateTime examinationDate);
 }
