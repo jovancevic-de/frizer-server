@@ -112,9 +112,9 @@ public class ExaminationController {
 		examination.setDoctor(doctor);
 		examination.setPatient(patient);
 		examination.setExaminationDate(examinationDto.getExaminationDate());
+		//sada je radjena provera da li je termin zauzet
 		List<Examination> examinationsByDate = examinationService
 				.getExaminationByDate(examinationDto.getExaminationDate());
-
 		if (examinationDto.getExaminationDate().getHour() < 8 || examinationDto.getExaminationDate().getHour() > 15) {
 			return new ResponseEntity<>("Examination can't be scheduled! Date and time already taken.", HttpStatus.BAD_REQUEST);
 		}
